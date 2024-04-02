@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class TVLIST {
     Scanner sc = new Scanner(System.in);
-    ArrayList<TV> list = new ArrayList<>();
+    ArrayList <TV> list = new ArrayList<>();
     TV tv;
     String id ;
     int tmp = 0;
@@ -14,12 +14,12 @@ public class TVLIST {
         System.out.println("Ban muon them loai TV nao: ");
         System.out.println("1: TV_SAMSUNG\n2: TV_SONY");
         tmp = sc.nextInt();
-        if(tmp == 1){
+        if (tmp == 1){
             tv = new TV_SAMSUNG();
             tv.Input();
             list.add(tv);
         }
-        if(tmp == 2){
+        if (tmp == 2){
             tv = new TV_SONY();
             tv.Input();
             list.add(tv);
@@ -30,8 +30,8 @@ public class TVLIST {
         sc.nextLine();
         System.out.println("Moi ban nhap ID can Update: ");
         id = sc.nextLine();
-        for(TV tv:list){
-            if(tv.getTvID().equals(id)){
+        for (TV tv:list){
+            if (tv.getTvID().equals(id)){
                 System.out.println("Moi ban nhap lai thong tin: ");
                 tv.Input();
             }
@@ -42,8 +42,8 @@ public class TVLIST {
         sc.nextLine();
         System.out.println("Moi ban nhap ID can Delete: ");
         id = sc.nextLine();
-        for(TV tv:list){
-            if(tv.getTvID().equals(id)){
+        for (TV tv:list){
+            if (tv.getTvID().equals(id)){
                 list.remove(tv);
             }
         }
@@ -53,8 +53,8 @@ public class TVLIST {
         sc.nextLine();
         System.out.println("Moi ban nhap ID can Find: ");
         id = sc.nextLine();
-        for(TV tv:list){
-            if(tv.getTvID().equals(id)){
+        for (TV tv:list){
+            if (tv.getTvID().equals(id)){
                 tv.Output();
             }
         }
@@ -62,11 +62,11 @@ public class TVLIST {
     
     void Menu(){
         tmp = 0;
-        while(tmp != 5){
+        while (tmp != 5){
             System.out.println("Ban muon chon chuc nang nao:");
             System.out.println("1: Add New\n2: Update\n3: Delete\n4: Find\n5: Exit");
             tmp = sc.nextInt();
-            switch(tmp){
+            switch (tmp){
                 case 1:
                     AddNew();
                     break;
